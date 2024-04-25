@@ -2,12 +2,7 @@
 <!-- <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot"> -->
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-
     <xacro:include filename="inertial_macros.xacro"/>
-
-    <!-- <xacro:include filename="example_include.xacro"/> -->
-
-
 
     <xacro:property name="chassis_length" value="0.335"/>
     <xacro:property name="chassis_width" value="0.265"/>
@@ -76,7 +71,7 @@
             <geometry>
                 <box size="${chassis_length} ${chassis_width} ${chassis_height}"/>
             </geometry>
-            <material name="orange"/>
+            <material name="red"/>
         </visual>
         <collision>
             <origin xyz="${chassis_length/2} 0 ${chassis_height/2}"/>
@@ -88,6 +83,10 @@
             <origin xyz="${chassis_length/2} 0 ${chassis_height/2}" rpy="0 0 0"/>
         </xacro:inertial_box>        
     </link>
+
+    <gazebo reference="chassis">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     
 
@@ -117,7 +116,9 @@
         </xacro:inertial_cylinder>
     </link>
 
-    
+    <gazebo reference="left_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
 
 
@@ -148,6 +149,10 @@
         </xacro:inertial_cylinder>
     </link>
 
+    <gazebo reference="right_wheel">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
     
 
 
@@ -177,6 +182,11 @@
         </xacro:inertial_sphere>
     </link>
 
+    <gazebo reference="caster_wheel">
+        <material>Gazebo/Black</material>
+        <mu1 value="1" />
+        <mu2 value="1" />
 
+    </gazebo>
 
 </robot>
