@@ -7,8 +7,11 @@
             <!-- Wheel Information -->
             <left_joint>left_wheel_joint</left_joint>
             <right_joint>right_wheel_joint</right_joint>
-            <Wheel_separation>0.35</Wheel_separation>
-            <Wheel_diameter>0.1</Wheel_diameter>
+            <!-- <Wheel_separation>0.35</Wheel_separation>wheel_separation
+            <Wheel_diameter>0.1</Wheel_diameter>wheel_diameter -->
+
+            <wheel_separation>0.35</wheel_separation>
+            <wheel_diameter>0.1</wheel_diameter>
 
             <!-- Limits -->
             <max_wheel_torque>200</max_wheel_torque>
